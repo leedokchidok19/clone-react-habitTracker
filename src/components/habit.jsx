@@ -6,7 +6,7 @@ class Habit extends Component {
   };
 
   handleIncrement = () => {
-      // state 오브젝트 안에 있는 count를 증가 한뒤 state를 업데이트 해야 함
+      // state 오브젝트 안에 있는 count를 증가 한뒤 state를 업데이트 해야 함ㅛ
     this.setState({ count: this.state.count + 1 });
   };
 
@@ -16,10 +16,11 @@ class Habit extends Component {
   };
 
   render() {
+    const { name, count } = this.props.habit;
     return (
-      <>
-        <span className="habit-name">Reading</span>
-        <span className="habit-count">{this.state.count}</span>
+      <li className="habit">
+        <span className="habit-name">{name}</span>
+        <span className="habit-count">{count}</span>
         <button
           className="habit-button habit-increase"
           onClick={this.handleIncrement}
@@ -35,7 +36,7 @@ class Habit extends Component {
         <button className="habit-button habit-delete">
           <i className="fas fa-trash"></i>
         </button>
-      </>
+      </li>
     );
   }
 }
