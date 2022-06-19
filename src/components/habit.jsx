@@ -17,10 +17,11 @@ class Habit extends Component {
   };
 
   render() {
+    const { name, count } = this.props.habit;
     return (
-      <>
-        <span className="habit-name">Reading</span>
-        <span className="habit-count">{this.state.count}</span>
+      <li className="habit">
+        <span className="habit-name">{name}</span>
+        <span className="habit-count">{count}</span>
         <button
           className="habit-button habit-increase"
           onClick={this.handleIncrement}
@@ -36,7 +37,7 @@ class Habit extends Component {
         <button className="habit-button habit-delete">
           <i className="fas fa-trash"></i>
         </button>
-      </>
+      </li>
     );
   }
 }
