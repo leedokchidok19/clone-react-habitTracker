@@ -7,13 +7,21 @@ class Habit extends Component {
 
   handleIncrement = () => {
     // state 오브젝트 안에 있는 count를 증가 한뒤 state를 업데이트 해야 함
-    this.setState({ count: this.state.count + 1 });
+    //this.setState({ count: this.state.count + 1 });
+
+    this.props.onIncrement(this.props.habit);
   };
 
   handleDecrement = () => {
     // state 오브젝트 안에 있는 count를 감소 한뒤 state를 업데이트 해야 함
-    const count = this.state.count - 1;
-    this.setState({ count: count < 0 ? 0 : count }); // count가 0 이하인 경우 0으로 업데이트
+    //const count = this.state.count - 1;
+    //this.setState({ count: count < 0 ? 0 : count }); // count가 0 이하인 경우 0으로 업데이트
+
+    this.props.onDecrement(this.props.habit);
+  };
+
+  handleDelete = () => {
+    this.props.onDelete(this.props.habit);
   };
 
   render() {
@@ -34,7 +42,10 @@ class Habit extends Component {
         >
           <i className="fas fa-minus-square"></i>
         </button>
-        <button className="habit-button habit-delete">
+        <button
+          className="habit-button habit-delete"
+          onClick={this.handleDelete}
+        >
           <i className="fas fa-trash"></i>
         </button>
       </li>
