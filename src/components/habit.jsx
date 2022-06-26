@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 class Habit extends Component {
+/*
   state = {
     count: 0,
   };
-
+*/
   handleIncrement = () => {
     // state 오브젝트 안에 있는 count를 증가 한뒤 state를 업데이트 해야 함
     //this.setState({ count: this.state.count + 1 });
